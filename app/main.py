@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # local imports
 from app.routers import todo, user, auth, sub_tasks
+from app import models
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
